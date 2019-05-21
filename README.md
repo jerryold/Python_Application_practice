@@ -1,2 +1,2 @@
 # python-practice
-這是關於決定一天要吃什麼的程式碼,重點是兩天不會重複出現一樣的菜單
+1.Python for word -使用python做對word直接做動作(ex:insert images) 
