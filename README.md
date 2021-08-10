@@ -1,12 +1,15 @@
 # python-practice
 -Application
+
    1.Python for word -使用python做對word直接做動作(ex:insert images) 
 
    2.Python for stock -使用python做分析stock 
 
    3.Python for pytesseract -使用python分析圖片
+   
 
 -MySQL
+
    1.使用MySQL創建資料表,並使用指令對資料表做動作
      * Database.sql-建立的大型資料庫練習
      * Aggregation.sql-聚合函數應用練習
