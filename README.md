@@ -7,6 +7,8 @@
 
    3.Python for pytesseract -使用python分析圖片
    
+   4.Python for parsing -使用python對local folder做資料pasrsr有用的資訊
+   
 
 -MySQL
 
@@ -29,3 +31,13 @@
      * select_data.py-選擇資料表資料
      
      * update_data.py-更新資料表資料
+
+-Machine learning(Kaggle Competition)
+  1.Titanic Survivial Predict
+    * 針對dataset做相關前處理(包括缺失值填補以及outlier計算)
+    * 使用random forest預測Age年齡缺失值
+    * Model-使用Random Forest以及K-fold和XGBOOST結合
+  2.Sharining Biking Predict
+    * 針對dataset做相關前處理(包括缺失值填補以及outlier計算)
+    * 使用random forest預測Wind風速缺失值
+    * Model-使用Random Forest以及Graidnet Boost
