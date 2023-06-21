@@ -41,3 +41,6 @@
     * 針對dataset做相關前處理(包括缺失值填補以及outlier計算)
     * 使用random forest預測Wind風速缺失值
     * Model-使用Random Forest以及Graidnet Boost
+
+-Linebot practice
+  1.透過Linenotify API簡單做成定時保健品提醒,若是達到程式設定的時間,則會發送訊息給使用者
