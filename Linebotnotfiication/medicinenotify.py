@@ -22,40 +22,40 @@ def sendToLine1():
 
     url = "https://notify-api.line.me/api/notify"
     payload1={'message':{msg1}} #
-    headers = {'Authorization': 'Bearer ' + 'ACtEtEwl80EBocUV05Bbwm5RAltEDpPOAfbxnQyiSdU'}
+    headers = {'Authorization': 'Bearer ' + 'FGMlOgB1202tVkhjf6Uh7Xb6n3r1N7Yh6SycDH0AVdk'}
     response = requests.request("POST", url, headers=headers, data=payload1)
     print(response.text)
 
 def sendToLine2():
    
-    msg1=(f' \n 現在早上11:00,記得吃B群 \n')
-    print(msg1)       
+    msg2=(f' \n 現在早上11:00,記得吃B群 \n')
+    print(msg2)       
 
     url = "https://notify-api.line.me/api/notify"
-    payload1={'message':{msg1}} #
-    headers = {'Authorization': 'Bearer ' + 'ACtEtEwl80EBocUV05Bbwm5RAltEDpPOAfbxnQyiSdU'}
+    payload1={'message':{msg2}} #
+    headers = {'Authorization': 'Bearer ' + 'FGMlOgB1202tVkhjf6Uh7Xb6n3r1N7Yh6SycDH0AVdk'}
     response = requests.request("POST", url, headers=headers, data=payload1)
     print(response.text)
 
 def sendToLine3():
    
-    msg1=(f' \n 現在下午1:00,記得吃魚油 \n')
-    print(msg1)       
+    msg3=(f' \n 現在下午1:00,記得吃魚油 \n')
+    print(msg3)       
 
     url = "https://notify-api.line.me/api/notify"
-    payload1={'message':{msg1}} #
-    headers = {'Authorization': 'Bearer ' + 'ACtEtEwl80EBocUV05Bbwm5RAltEDpPOAfbxnQyiSdU'}
+    payload1={'message':{msg3}} #
+    headers = {'Authorization': 'Bearer ' + 'FGMlOgB1202tVkhjf6Uh7Xb6n3r1N7Yh6SycDH0AVdk'}
     response = requests.request("POST", url, headers=headers, data=payload1)
     print(response.text)
 
 def sendToLine4():
    
-    msg1=(f' \n 現在下午17:00,記得吃C \n')
-    print(msg1)       
+    msg4=(f' \n 現在下午17:00,記得吃C \n')
+    print(msg4)       
 
     url = "https://notify-api.line.me/api/notify"
-    payload1={'message':{msg1}} #
-    headers = {'Authorization': 'Bearer ' + 'ACtEtEwl80EBocUV05Bbwm5RAltEDpPOAfbxnQyiSdU'}
+    payload1={'message':{msg4}} #
+    headers = {'Authorization': 'Bearer ' + 'FGMlOgB1202tVkhjf6Uh7Xb6n3r1N7Yh6SycDH0AVdk'}
     response = requests.request("POST", url, headers=headers, data=payload1)
     print(response.text)
 
@@ -70,22 +70,21 @@ current_time=now1.astimezone(timezone)
 
 def weekday_job1(x):
     week = datetime.today().weekday()
-    if week<5 and 1<=current_time.now().hour<=2:
-        schedule.every().hour.do(x)
+    if week<5 and 1<=current_time.now().hour<2:
+        schedule.every(30).minutes.do(x)
 def weekday_job2(x):
     week = datetime.today().weekday()
-    if week<5 and 3<=current_time.now().hour<=4:
-        schedule.every().hour.do(x)
-
+    if week<5 and 3<=current_time.now().hour<4:
+        schedule.every(30).minutes.do(x)
 def weekday_job3(x):
     week = datetime.today().weekday()
-    if week<5 and 5<=current_time.now().hour<=6:
-        schedule.every().hour.do(x)
+    if week<5 and 5<=current_time.now().hour<6:
+        schedule.every(30).minutes.do(x)
 
 def weekday_job4(x):
     week = datetime.today().weekday()
-    if week<5 and 9<=current_time.now().hour<=10:
-        schedule.every().hour.do(x)
+    if week<5 and 9<=current_time.now().hour<10:
+        schedule.every(30).minutes.do(x)
 
 
 weekday_job1(sendToLine1)
