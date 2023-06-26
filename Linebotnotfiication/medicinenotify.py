@@ -52,7 +52,7 @@ def sendToLine3():
 
 def sendToLine4():
    
-    msg4=(f' \n 現在下午17:10,記得吃C \n')
+    msg4=(f' \n 現在下午17:25,記得吃C \n')
     print(msg4)       
 
     url = "https://notify-api.line.me/api/notify"
@@ -78,6 +78,6 @@ scheduler = BlockingScheduler()
 scheduler.add_job(sendToLine1, "cron", minute='30',hour='1',day_of_week='mon-fri')
 scheduler.add_job(sendToLine2, "cron", minute='20',hour='3',day_of_week='mon-fri')
 scheduler.add_job(sendToLine3, "cron", minute='30',hour='5',day_of_week='mon-fri')
-scheduler.add_job(sendToLine4, "cron", minute='20',hour='9',day_of_week='mon-fri')
+scheduler.add_job(sendToLine4, "cron", minute='25',hour='9',day_of_week='mon-fri')
 # Starting the scheduler in a separate thread.
 scheduler.start()
