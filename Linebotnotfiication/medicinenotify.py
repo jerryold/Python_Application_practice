@@ -32,9 +32,9 @@ def sendToLine2():
     print(msg2)       
 
     url = "https://notify-api.line.me/api/notify"
-    payload1={'message':{msg2}} #
+    payload2={'message':{msg2}} #
     headers = {'Authorization': 'Bearer ' + 'FGMlOgB1202tVkhjf6Uh7Xb6n3r1N7Yh6SycDH0AVdk'}
-    response = requests.request("POST", url, headers=headers, data=payload1)
+    response = requests.request("POST", url, headers=headers, data=payload2)
     print(response.text)
 
 def sendToLine3():
@@ -43,9 +43,9 @@ def sendToLine3():
     print(msg3)       
 
     url = "https://notify-api.line.me/api/notify"
-    payload1={'message':{msg3}} #
+    payload3={'message':{msg3}} #
     headers = {'Authorization': 'Bearer ' + 'FGMlOgB1202tVkhjf6Uh7Xb6n3r1N7Yh6SycDH0AVdk'}
-    response = requests.request("POST", url, headers=headers, data=payload1)
+    response = requests.request("POST", url, headers=headers, data=payload3)
     print(response.text)
 
 def sendToLine4():
@@ -54,9 +54,9 @@ def sendToLine4():
     print(msg4)       
 
     url = "https://notify-api.line.me/api/notify"
-    payload1={'message':{msg4}} #
+    payload4={'message':{msg4}} #
     headers = {'Authorization': 'Bearer ' + 'FGMlOgB1202tVkhjf6Uh7Xb6n3r1N7Yh6SycDH0AVdk'}
-    response = requests.request("POST", url, headers=headers, data=payload1)
+    response = requests.request("POST", url, headers=headers, data=payload4)
     print(response.text)
 
     
@@ -71,20 +71,31 @@ current_time=now1.astimezone(timezone)
 def weekday_job1(x):
     week = datetime.today().weekday()
     if week<5 and 1<=current_time.now().hour<2:
-        schedule.every(30).minutes.do(x)
+        try:
+            schedule.every(40).seconds.do(x)
+        except Exception as e:
+            print(e)
 def weekday_job2(x):
     week = datetime.today().weekday()
     if week<5 and 3<=current_time.now().hour<4:
-        schedule.every(30).minutes.do(x)
+        try:
+            schedule.every(40).seconds.do(x)
+        except Exception as e:
+            print(e)
 def weekday_job3(x):
     week = datetime.today().weekday()
     if week<5 and 5<=current_time.now().hour<6:
-        schedule.every(30).minutes.do(x)
-
+        try:
+            schedule.every(40).minutes.do(x)
+        except Exception as e:
+            print(e)
 def weekday_job4(x):
     week = datetime.today().weekday()
     if week<5 and 9<=current_time.now().hour<10:
-        schedule.every(30).minutes.do(x)
+        try:
+            schedule.every(40).minutes.do(x)
+        except Exception as e:
+            print(e)
 
 
 weekday_job1(sendToLine1)
