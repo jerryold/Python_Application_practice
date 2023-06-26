@@ -17,7 +17,7 @@ def get_two_float(f_str, n):
 
 def sendToLine1():
    
-    msg1=(f' \n 現在早上9:00,記得吃葉黃素 \n')
+    msg1=(f' \n 現在早上9:30,記得吃葉黃素 \n')
     print(msg1)       
 
     url = "https://notify-api.line.me/api/notify"
@@ -28,7 +28,7 @@ def sendToLine1():
 
 def sendToLine2():
    
-    msg2=(f' \n 現在早上11:00,記得吃B群 \n')
+    msg2=(f' \n 現在早上11:20,記得吃B群 \n')
     print(msg2)       
 
     url = "https://notify-api.line.me/api/notify"
@@ -39,7 +39,7 @@ def sendToLine2():
 
 def sendToLine3():
    
-    msg3=(f' \n 現在下午1:00,記得吃魚油 \n')
+    msg3=(f' \n 現在下午1:30,記得吃魚油 \n')
     print(msg3)       
 
     url = "https://notify-api.line.me/api/notify"
@@ -71,31 +71,20 @@ current_time=now1.astimezone(timezone)
 def weekday_job1(x):
     week = datetime.today().weekday()
     if week<5 and 1<=current_time.now().hour<2:
-        try:
-            schedule.every(40).minutes.do(x)
-        except Exception as e:
-            print(e)
+        schedule.every().hours.at(":30").do(x) 
+            
 def weekday_job2(x):
     week = datetime.today().weekday()
     if week<5 and 3<=current_time.now().hour<4:
-        try:
-            schedule.every(40).minutes.do(x)
-        except Exception as e:
-            print(e)
+        schedule.every().hours.at(":20").do(x) 
 def weekday_job3(x):
     week = datetime.today().weekday()
     if week<5 and 5<=current_time.now().hour<6:
-        try:
-            schedule.every(40).minutes.do(x)
-        except Exception as e:
-            print(e)
+        schedule.every().hours.at(":30").do(x) 
 def weekday_job4(x):
     week = datetime.today().weekday()
     if week<5 and 9<=current_time.now().hour<10:
-        try:
-            schedule.every(40).minutes.do(x)
-        except Exception as e:
-            print(e)
+        schedule.every().hours.at(":00").do(x) 
 
 
 weekday_job1(sendToLine1)
@@ -104,5 +93,12 @@ weekday_job3(sendToLine3)
 weekday_job4(sendToLine4)
 
 while True:
-    schedule.run_pending()
-    time.sleep(60)
+    try:
+        schedule.run_pending()
+        time.sleep(60)
+    except Exception as e:
+        sendToLine1(e)
+        sendToLine2(e)
+        sendToLine3(e)
+        sendToLine4(e)
+        time.sleep(60)
