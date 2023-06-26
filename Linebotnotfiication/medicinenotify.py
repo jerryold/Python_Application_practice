@@ -72,14 +72,14 @@ def weekday_job1(x):
     week = datetime.today().weekday()
     if week<5 and 1<=current_time.now().hour<2:
         try:
-            schedule.every(2).minutes.do(x)
+            schedule.every(40).minutes.do(x)
         except Exception as e:
             print(e)
 def weekday_job2(x):
     week = datetime.today().weekday()
-    if week<5 and 2<=current_time.now().hour<3:
+    if week<5 and 3<=current_time.now().hour<4:
         try:
-            schedule.every(2).minutes.do(x)
+            schedule.every(40).minutes.do(x)
         except Exception as e:
             print(e)
 def weekday_job3(x):
