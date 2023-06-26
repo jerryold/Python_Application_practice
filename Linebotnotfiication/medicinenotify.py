@@ -6,6 +6,8 @@ import time
 import pycron
 import pytz
 from datetime import datetime, timedelta
+from apscheduler.schedulers.blocking import BlockingScheduler
+from apscheduler.schedulers.background import BackgroundScheduler
 
 
 
@@ -50,7 +52,7 @@ def sendToLine3():
 
 def sendToLine4():
    
-    msg4=(f' \n 現在下午17:00,記得吃C \n')
+    msg4=(f' \n 現在下午17:10,記得吃C \n')
     print(msg4)       
 
     url = "https://notify-api.line.me/api/notify"
@@ -67,38 +69,15 @@ timezone=pytz.timezone('Asia/Singapore')
 current_time=now1.astimezone(timezone)
 
 
-
-def weekday_job1(x):
-    week = datetime.today().weekday()
-    if week<5 and 1<=current_time.now().hour<2:
-        schedule.every().hours.at(":30").do(x) 
-            
-def weekday_job2(x):
-    week = datetime.today().weekday()
-    if week<5 and 3<=current_time.now().hour<4:
-        schedule.every().hours.at(":20").do(x) 
-def weekday_job3(x):
-    week = datetime.today().weekday()
-    if week<5 and 5<=current_time.now().hour<6:
-        schedule.every().hours.at(":30").do(x) 
-def weekday_job4(x):
-    week = datetime.today().weekday()
-    if week<5 and 9<=current_time.now().hour<10:
-        schedule.every().hours.at(":00").do(x) 
+week = datetime.today().weekday()
+   
 
 
-weekday_job1(sendToLine1)
-weekday_job2(sendToLine2)
-weekday_job3(sendToLine3)
-weekday_job4(sendToLine4)
-
-while True:
-    try:
-        schedule.run_pending()
-        time.sleep(60)
-    except Exception as e:
-        sendToLine1(e)
-        sendToLine2(e)
-        sendToLine3(e)
-        sendToLine4(e)
-        time.sleep(60)
+# Creating a scheduler object.
+scheduler = BlockingScheduler()
+scheduler.add_job(sendToLine1, "cron", minute='30',hour='1',day_of_week='mon-fri')
+scheduler.add_job(sendToLine2, "cron", minute='20',hour='3',day_of_week='mon-fri')
+scheduler.add_job(sendToLine3, "cron", minute='30',hour='5',day_of_week='mon-fri')
+scheduler.add_job(sendToLine4, "cron", minute='10',hour='9',day_of_week='mon-fri')
+# Starting the scheduler in a separate thread.
+scheduler.start()
