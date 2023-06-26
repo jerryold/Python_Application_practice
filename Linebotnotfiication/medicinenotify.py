@@ -78,6 +78,6 @@ scheduler = BlockingScheduler()
 scheduler.add_job(sendToLine1, "cron", minute='30',hour='1',day_of_week='mon-fri')
 scheduler.add_job(sendToLine2, "cron", minute='20',hour='3',day_of_week='mon-fri')
 scheduler.add_job(sendToLine3, "cron", minute='30',hour='5',day_of_week='mon-fri')
-scheduler.add_job(sendToLine4, "cron", minute='10',hour='9',day_of_week='mon-fri')
+scheduler.add_job(sendToLine4, "cron", minute='20',hour='9',day_of_week='mon-fri')
 # Starting the scheduler in a separate thread.
 scheduler.start()
