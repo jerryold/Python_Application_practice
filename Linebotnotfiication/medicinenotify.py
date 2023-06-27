@@ -19,8 +19,7 @@ def get_two_float(f_str, n):
 
 def sendToLine1():
    
-    msg1=(f' \n 現在早上9:30,記得吃葉黃素 \n')
-    print(msg1)       
+    msg1=(f' \n 現在早上9:30,記得吃葉黃素 \n')         
 
     url = "https://notify-api.line.me/api/notify"
     payload1={'message':{msg1}} #
@@ -30,8 +29,7 @@ def sendToLine1():
 
 def sendToLine2():
    
-    msg2=(f' \n 現在早上11:20,記得吃B群 \n')
-    print(msg2)       
+    msg2=(f' \n 現在早上11:20,記得吃B群 \n')         
 
     url = "https://notify-api.line.me/api/notify"
     payload2={'message':{msg2}} #
@@ -41,8 +39,7 @@ def sendToLine2():
 
 def sendToLine3():
    
-    msg3=(f' \n 現在下午1:30,記得吃魚油 \n')
-    print(msg3)       
+    msg3=(f' \n 現在下午1:30,記得吃魚油 \n')         
 
     url = "https://notify-api.line.me/api/notify"
     payload3={'message':{msg3}} #
@@ -52,8 +49,7 @@ def sendToLine3():
 
 def sendToLine4():
    
-    msg4=(f' \n 現在下午17:10,記得吃C \n')
-    print(msg4)       
+    msg4=(f' \n 現在下午17:10,記得吃C \n')          
 
     url = "https://notify-api.line.me/api/notify"
     payload4={'message':{msg4}} #
