@@ -25,7 +25,7 @@ def sendToLine1():
     payload1={'message':{msg1}} #
     headers = {'Authorization': 'Bearer ' + 'FGMlOgB1202tVkhjf6Uh7Xb6n3r1N7Yh6SycDH0AVdk'}
     response = requests.request("POST", url, headers=headers, data=payload1)
-    print(response.text)
+    # print(response.text)
 
 def sendToLine2():
    
@@ -35,7 +35,7 @@ def sendToLine2():
     payload2={'message':{msg2}} #
     headers = {'Authorization': 'Bearer ' + 'FGMlOgB1202tVkhjf6Uh7Xb6n3r1N7Yh6SycDH0AVdk'}
     response = requests.request("POST", url, headers=headers, data=payload2)
-    print(response.text)
+    # print(response.text)
 
 def sendToLine3():
    
@@ -45,7 +45,7 @@ def sendToLine3():
     payload3={'message':{msg3}} #
     headers = {'Authorization': 'Bearer ' + 'FGMlOgB1202tVkhjf6Uh7Xb6n3r1N7Yh6SycDH0AVdk'}
     response = requests.request("POST", url, headers=headers, data=payload3)
-    print(response.text)
+    # print(response.text)
 
 def sendToLine4():
    
@@ -55,7 +55,7 @@ def sendToLine4():
     payload4={'message':{msg4}} #
     headers = {'Authorization': 'Bearer ' + 'FGMlOgB1202tVkhjf6Uh7Xb6n3r1N7Yh6SycDH0AVdk'}
     response = requests.request("POST", url, headers=headers, data=payload4)
-    print(response.text)
+    # print(response.text)
 
     
 
